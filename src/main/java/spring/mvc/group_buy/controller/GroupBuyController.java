@@ -25,6 +25,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -185,6 +186,11 @@ public class GroupBuyController {
 		return "redirect:/mvc/group_buy/login";
 	}
 	
+	/**
+	 * http://localhost:8080/GroupBuy/mvc/group_buy/frontend/main
+	 * @param model
+	 * @return
+	 */
 	// 前台團購首頁
 	@GetMapping("/frontend/main")
 	public String frontendMain(Model model) {
@@ -413,5 +419,19 @@ public class GroupBuyController {
 		}
 		return "/group_buy/backend/report";
 		
+	}
+	
+	/**
+	 * http://localhost:8080/GroupBuy/mvc/group_buy/frontend/product/detail/501
+	 * @param model
+	 * @param productId
+	 * @return
+	 */
+	@GetMapping("/frontend/product/detail/{productId}")
+	public String productDetail(Model model, @PathVariable("productId") Integer productId) {
+		
+		model.addAttribute("productId", productId);
+		
+		return "group_buy/frontend/product_detail";
 	}
 }

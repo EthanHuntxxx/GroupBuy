@@ -7,11 +7,36 @@
 		<meta charset="UTF-8">
 		<title>團購網首頁</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
 	<body>
 		<!-- menu -->
 		<%@include file="../menu.jspf" %>
-		<div style="padding: 15px">
+		<div class="w-100 h-100 d-flex justify-content-center">
+			<c:forEach items="${ products }" var="product">
+	       		<div class="card mx-2" style="width: 18rem;">
+				  <a href="/GroupBuy/mvc/group_buy/frontend/product/detail/${ product.productId }" class="mx-auto">
+				  	<img src="/GroupBuy/images/${ product.productId }.jpg" class="card-img-top mt-1" alt="" style="width:150px;height:150px">
+				  </a>
+				  <div class="card-body">
+				    <h5 class="card-title">${ product.productName }</h5>
+				    <p class="card-text">${ product.price } ${ product.unit }</p>
+				    <form method="post" action="./addToCart" class="pure-form">
+				        <div class="d-flex justify-content-center px-1">
+				        	數量: <input type="number" id="quantity" name="quantity" value="5" />
+				    		<button type="submit" ${ (empty products)?'disabled':'' } class="pure-button pure-button-primary ms-1">新增</button>
+				        </div>
+				    	<input type="hidden" id="productId" name="productId" value="${ product.productId}" /><p />	  
+				    </form>
+				  </div>
+				</div>
+			</c:forEach>
+		</div>
+
+		
+		<!-- <div style="padding: 15px">
 			<form method="post" action="./addToCart" class="pure-form">
 				<fieldset>
 					<legend>團購網首頁</legend>
@@ -29,6 +54,6 @@
 							class="pure-button pure-button-primary">新增</button>	 
 				</fieldset>
 			</form>
-		</div>
+		</div>-->
 	</body>
 </html>
