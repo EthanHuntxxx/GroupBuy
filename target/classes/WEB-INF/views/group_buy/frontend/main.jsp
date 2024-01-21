@@ -15,6 +15,8 @@
 		<!-- menu -->
 		<%@include file="../menu.jspf" %>
 		<div class="w-100 h-100 d-flex justify-content-center">
+		
+		
 			<c:forEach items="${ products }" var="product">
 	       		<div class="card mx-2" style="width: 18rem;">
 				  <a href="/GroupBuy/mvc/group_buy/frontend/product/detail/${ product.productId }" class="mx-auto">
@@ -22,10 +24,10 @@
 				  </a>
 				  <div class="card-body">
 				    <h5 class="card-title">${ product.productName }</h5>
-				    <p class="card-text">${ product.price } ${ product.unit }</p>
+				    <p class="card-text">${ product.price } 元</p>
 				    <form method="post" action="./addToCart" class="pure-form">
-				        <div class="d-flex justify-content-center px-1">
-				        	數量: <input type="number" id="quantity" name="quantity" value="5" />
+				        <div class="d-flex justify-content-center px-1">  
+				        	數量: <input type="number" id="quantity" name="quantity" value="5" style="width: 90px;"/> ${ product.unit }
 				    		<button type="submit" ${ (empty products)?'disabled':'' } class="pure-button pure-button-primary ms-1">新增</button>
 				        </div>
 				    	<input type="hidden" id="productId" name="productId" value="${ product.productId}" /><p />	  

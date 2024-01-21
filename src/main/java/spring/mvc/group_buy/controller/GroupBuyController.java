@@ -430,8 +430,17 @@ public class GroupBuyController {
 	@GetMapping("/frontend/product/detail/{productId}")
 	public String productDetail(Model model, @PathVariable("productId") Integer productId) {
 		
+
+	    
+	  
 		model.addAttribute("productId", productId);
 		
 		return "group_buy/frontend/product_detail";
 	}
+	
+	
+
+
+	
+	
 }
