@@ -34,7 +34,7 @@
 
 
 
- <section class ="mx-auto" style="width: 70%; margin-left: 15%; margin-right: 15%; background-color: #f0f0f0;">
+ <section class ="mx-auto" style="width: 60%; margin-left: 15%; margin-right: 15%; background-color: #f0f0f0;">
 
 <dl class="row">
   <dt class="col-sm-3">商品名稱</dt>
@@ -50,10 +50,10 @@
     <p>And some more placeholder definition text.</p>
   </dd>
 
-  <dt class="col-sm-3">Another term</dt>
+  <dt class="col-sm-3">產地</dt>
   <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
 
-  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+  <dt class="col-sm-3 text-truncate">介紹</dt>
   <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
 
   <dt class="col-sm-3">Nesting</dt>

@@ -14,16 +14,15 @@
 	<body>
 		<!-- menu -->
 		<%@include file="../menu.jspf" %>
-		<div class="w-100 h-100 d-flex justify-content-center">
+		<div class="w-100 h-50 d-flex justify-content-center">
 		
-		<form action="/search" method="get">
-    <label for="search">搜尋商品：</label>
-    <input type="text" id="search" name="search" placeholder="輸入商品名稱" style="width: 200px;"/>
+		    <form action="/search" method="get" class="my-4">
+    <label for="search">搜尋商品:</label>
+    <input type="text" id="search" name="search" placeholder="輸入商品名稱">
     <button type="submit">搜尋</button>
-</form>
-
-
-		
+  </form>
+</div>
+		<div class="w-100 h-50 d-flex justify-content-center">
 			<c:forEach items="${ products }" var="product">
 	       		<div class="card mx-2" style="width: 18rem;">
 				  <a href="/GroupBuy/mvc/group_buy/frontend/product/detail/${ product.productId }" class="mx-auto">
@@ -34,7 +33,7 @@
 				    <p class="card-text">${ product.price } 元</p>
 				    <form method="post" action="./addToCart" class="pure-form">
 				        <div class="d-flex justify-content-center px-1">  
-				        	數量: <input type="number" id="quantity" name="quantity" value="5" style="width: 90px;"/> ${ product.unit }
+				        	數量: <input type="number" id="quantity" name="quantity" value="1" style="width: 90px;"/> ${ product.unit }
 				    		<button type="submit" ${ (empty products)?'disabled':'' } class="pure-button pure-button-primary ms-1">新增</button>
 				        </div>
 				    	<input type="hidden" id="productId" name="productId" value="${ product.productId}" /><p />	  
@@ -42,8 +41,8 @@
 				  </div>
 				</div>
 			</c:forEach>
-		</div>
-
+		
+</div>
 		
 		<!-- <div style="padding: 15px">
 			<form method="post" action="./addToCart" class="pure-form">
