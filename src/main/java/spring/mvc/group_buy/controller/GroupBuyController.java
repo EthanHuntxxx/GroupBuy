@@ -438,7 +438,24 @@ public class GroupBuyController {
 		return "group_buy/frontend/product_detail";
 	}
 	
-	
+	/**@GetMapping("/frontend/main")
+	public String frontendMain(Model model) {
+		// 過濾出只有上架的商品
+		List<Product> products = dao.findAllProducts(true);
+		model.addAttribute("products", products);
+		return "group_buy/frontend/main";
+	}
+	@GetMapping("/frontend/product/detail/{productId}")
+	public String productDetail(Model model, @PathVariable("productId") Integer productId) {
+		
+
+	    
+	  
+		model.addAttribute("productId", productId);
+		
+		return "group_buy/frontend/product_detail";
+	}
+	 */
 
 
 	

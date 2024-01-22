@@ -16,6 +16,13 @@
 		<%@include file="../menu.jspf" %>
 		<div class="w-100 h-100 d-flex justify-content-center">
 		
+		<form action="/search" method="get">
+    <label for="search">搜尋商品：</label>
+    <input type="text" id="search" name="search" placeholder="輸入商品名稱" style="width: 200px;"/>
+    <button type="submit">搜尋</button>
+</form>
+
+
 		
 			<c:forEach items="${ products }" var="product">
 	       		<div class="card mx-2" style="width: 18rem;">

@@ -37,16 +37,16 @@
  <section class ="mx-auto" style="width: 70%; margin-left: 15%; margin-right: 15%; background-color: #f0f0f0;">
 
 <dl class="row">
-  <dt class="col-sm-3">商品價錢</dt>
+  <dt class="col-sm-3">商品名稱</dt>
   
    <dd class="col-sm-9">${ productId }</dd>
 
 
 
 
-  <dt class="col-sm-3">${ productId }</dt>
+  <dt class="col-sm-3">商品價錢</dt>
   <dd class="col-sm-9">
-    <p>Definition for the term.</p>
+    <p>${ product.price }</p>
     <p>And some more placeholder definition text.</p>
   </dd>
 
