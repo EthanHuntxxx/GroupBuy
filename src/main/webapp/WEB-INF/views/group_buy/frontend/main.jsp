@@ -20,8 +20,11 @@
     <label for="search">搜尋商品:</label>
     <input type="text" id="search" name="search" placeholder="輸入商品名稱">
     <button type="submit">搜尋</button><p />
+    <div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" type="button">銷售排行</button>
+  
+</div>
     
-    <button type="submit">銷售排行</button>
   </form>
 </div>
 		<div class="w-100 h-50 d-flex justify-content-center">
