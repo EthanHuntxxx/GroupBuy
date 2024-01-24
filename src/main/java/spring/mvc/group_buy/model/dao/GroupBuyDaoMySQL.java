@@ -85,21 +85,25 @@ public class GroupBuyDaoMySQL implements GroupBuyDao {
 	// 1. 查詢所有商品(多筆)
 	@Override
 	public List<Product> findAllProducts() {
-		String sql = "select productId, productName, price, unit, isLaunch from product";
+		String sql = "select productId, productName, price, unit, isLaunch, productDetail from product";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Product.class));
 	}
-	
+	// 1. 查詢所有商品排行(多筆)
+	public List<Product> findRankingProducts() {
+		String sql = "select productId, productName, price, unit, isLaunch, productDetail from product";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Product.class));
+	}
 	// 1. 根據 isLaunch 狀態取得商品資料 
 	@Override
 	public List<Product> findAllProducts(Boolean isLaunch) {
-		String sql = "select productId, productName, price, unit, isLaunch from product where isLaunch = ?";
+		String sql = "select productId, productName, price, unit, isLaunch, productDetail from product where isLaunch = ?";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Product.class), isLaunch);
 	}
 
 	//	2. 根據產品ID來查找商品(單筆)
 	@Override
 	public Optional<Product> findProductById(Integer productId) {
-		String sql = "select productId, productName, price, unit, isLaunch from product where productId = ?";
+		String sql = "select productId, productName, price, unit, isLaunch, productDetail from product where productId = ?";
 		try {
 			Product product = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Product.class), productId);
 			return Optional.ofNullable(product);
@@ -111,8 +115,8 @@ public class GroupBuyDaoMySQL implements GroupBuyDao {
 	//	3. 新增商品
 	@Override
 	public void addProduct(Product product) {
-		String sql = "insert into product(productName, price, unit, isLaunch) values(?, ?, ?, ?)";
-		jdbcTemplate.update(sql, product.getProductName(), product.getPrice(), product.getUnit(), product.getIsLaunch());
+		String sql = "insert into product(productName, price, unit, isLaunch, productDetail) values(?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sql, product.getProductName(), product.getPrice(), product.getUnit(), product.getIsLaunch(), product.getProductDetail());
 	}
 	
 	//	4. 變更商品上架狀態

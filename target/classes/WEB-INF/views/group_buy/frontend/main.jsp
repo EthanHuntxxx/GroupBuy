@@ -16,7 +16,7 @@
 		<%@include file="../menu.jspf" %>
 		<div class="w-100 h-50 d-flex justify-content-center">
 		
-		    <form action="/search" method="get" class="my-4">
+		    <form action="./search" method="get" class="my-4">
     <label for="search">搜尋商品:</label>
     <input type="text" id="search" name="search" placeholder="輸入商品名稱">
     <button type="submit">搜尋</button>

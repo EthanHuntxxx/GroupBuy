@@ -18,7 +18,8 @@
 					品名: ${ product.productName }<p />
 					價格: ${ product.price }<p />
 					單位: ${ product.unit }
-					上架: ${ (product.isLaunch) ? 'V' : 'X' }
+					上架: ${ (product.isLaunch) ? 'V' : 'X' }<p />
+					商品資訊: ${ product.productDetail }
 					<p />	 
 				</fieldset>
 			</form>

@@ -195,8 +195,19 @@ public class GroupBuyController {
 	@GetMapping("/frontend/main")
 	public String frontendMain(Model model) {
 		// 過濾出只有上架的商品
-		List<Product> products = dao.findAllProducts(true);
+		List<Product> products = dao.findAllProducts();
 		model.addAttribute("products", products);
+		return "group_buy/frontend/main";
+	}
+	
+	// 商品搜尋
+	@GetMapping("/frontend/search")
+	public String frontendSearch(Model model, String search) {
+		// 過濾出只有上架的商品
+		List<Product> products = dao.findAllProducts();
+		List<Product> showproducts = products.stream().filter(product -> product.getProductName().contains(search)).toList();
+
+		model.addAttribute("products", showproducts);
 		return "group_buy/frontend/main";
 	}
 	
@@ -373,29 +384,23 @@ public class GroupBuyController {
 	@GetMapping("/backend/main")
 	public String backendMain(@ModelAttribute Product product, Model model, HttpSession session) {
 		// 建立一個 csrf_token 防止 csrf 攻擊
-		String csrf_token = UUID.randomUUID().toString(); // 得到一個隨機的唯一識別碼
-		// 將 csrf_token 存放到 session 物件中
-		session.setAttribute("csrf_token", csrf_token);
+//		String csrf_token = UUID.randomUUID().toString(); // 得到一個隨機的唯一識別碼
+//		// 將 csrf_token 存放到 session 物件中
+//		session.setAttribute("csrf_token", csrf_token);
 		
 		model.addAttribute("products", dao.findAllProducts());
 		model.addAttribute("units", units);
-		model.addAttribute("csrf_token", csrf_token);
+//		model.addAttribute("csrf_token", csrf_token);
 		return "group_buy/backend/main";
 	}
 	
 	// 商品新增
 	@PostMapping("/backend/addProduct")
-	public String addProduct(@ModelAttribute Product product, 
-							 @RequestParam("csrf_token") String csrf_token, 
+	public String addProduct(@ModelAttribute Product product,  
 							 HttpSession session) {
-		// 比對 csrf_token 與 session 中的 csrf_token
-		if(csrf_token.equals(session.getAttribute("csrf_token").toString())) {
-			// 比對成功進行新增程序
 			dao.addProduct(product); 
 			return "group_buy/backend/result";
-		} else {
-			return "redirect:/mvc/group_buy/logout"; // 強制登出
-		}
+
 	}
 	
 	// 商品上下架處理
@@ -429,15 +434,14 @@ public class GroupBuyController {
 	 */
 	@GetMapping("/frontend/product/detail/{productId}")
 	public String productDetail(Model model, @PathVariable("productId") Integer productId) {
-		
+		Optional<Product> product = dao.findProductById(productId);
 
-	    
-	  
+	      
 		model.addAttribute("productId", productId);
+		model.addAttribute("product", product.get());
 		
 		return "group_buy/frontend/product_detail";
 	}
-	
 
 	
 	/**@GetMapping("/frontend/main")

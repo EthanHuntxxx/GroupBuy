@@ -92,7 +92,8 @@ create table if not exists product(
     productName varchar(50) not null,
     price decimal(10, 2),
     unit varchar(10),
-    isLaunch boolean
+    isLaunch boolean,
+    productDetail varchar(800)
 );
 -- 設置 AUTO_INCREMENT = 501
 alter table product auto_increment = 501;
@@ -195,3 +196,11 @@ left join product p on ci.productId = p.productId
 where c.isCheckout = true
 group by u.userId, u.username
 */
+
+
+-- 各商品銷售總量
+--select p.productId, p.productName, p.price, p.unit, coalesce(sum(ci.quantity),0) total_quantity
+--from group_buy.cartitem ci
+--left join group_buy.cart c on ci.cartId = c.cartId
+--left join group_buy.product p on ci.productId = p.productId
+--where c.isCheckout = 1  group by p.productId order by total_quantity desc

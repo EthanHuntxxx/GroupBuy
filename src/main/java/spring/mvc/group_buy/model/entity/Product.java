@@ -19,17 +19,27 @@ public class Product {
 	private Integer price; // 商品價格 
 	private String unit; // 單位
 	private Boolean isLaunch; // 是否上架 
+	private String productDetail;
 	
 	public Product() {
 		
 	}
 	
-	public Product(Integer productId, String productName, Integer price, String unit, Boolean isLaunch) {
+	public Product(Integer productId, String productName, Integer price, String unit, Boolean isLaunch, String productDetail) {
 		this.productId = productId;
 		this.productName = productName;
 		this.price = price;
 		this.unit = unit;
 		this.isLaunch = isLaunch;
+		this.productDetail = productDetail;
+	}
+
+	public String getProductDetail() {
+		return productDetail;
+	}
+
+	public void setProductDetail(String productDetail) {
+		this.productDetail = productDetail;
 	}
 
 	public Integer getProductId() {
@@ -75,8 +85,10 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", price=" + price + ", unit="
-				+ unit + ", isLaunch=" + isLaunch + "]";
+				+ unit + ", isLaunch=" + isLaunch + ", productDetail=" + productDetail + "]";
 	}
+
+
 	
 	
 	

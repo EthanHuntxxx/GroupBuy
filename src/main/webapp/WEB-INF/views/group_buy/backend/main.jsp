@@ -33,8 +33,8 @@
 								&nbsp;&nbsp;&nbsp;&nbsp;	 
 								上架: <sp:checkbox path="isLaunch" /> 
 								<p />
-								CSRF: <input type="text" name="csrf_token" value="${ csrf_token }">	 
-								<p />
+								
+								商品資訊: <sp:textarea path="productDetail" name="productDetail" style="width: 300px; height:300px;" /><p />
 								<button type="submit" class="pure-button pure-button-primary">新增</button>
 							</fieldset>
 						</sp:form>
