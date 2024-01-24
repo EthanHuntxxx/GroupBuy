@@ -155,13 +155,14 @@ insert into level_ref_service(levelId, serviceId, sort) values(2, 4, 5);
 insert into level_ref_service(levelId, serviceId, sort) values(2, 51, 3);
 insert into level_ref_service(levelId, serviceId, sort) values(2, 52, 4);
 
-INSERT INTO product (productId, productName, price, unit, isLaunch) VALUES
-(501, 'Coffee', 300.00, 'Pack', true),
-(502, 'Green Tea', 150.00, 'Box', false),
-(503, 'Honey', 200.00, 'Bottle', false),
-(504, 'Sugar', 100.00, 'Bag', true),
-(505, 'Milk', 450.00, 'Dozen', true),
-(506, '海鮮丼飯', 500.00, 'Dozen', true);
+INSERT INTO product (productId, productName, price, unit, isLaunch,productDetail ) VALUES
+(501, 'Coffee', 300.00, 'Pack', true,'' ),
+(502, 'Green Tea', 150.00, 'Box', false,'' ),
+(503, 'Honey', 200.00, 'Bottle', false,'' ),
+(504, 'Sugar', 100.00, 'Bag', true,'' ),
+(505, 'Milk', 450.00, 'Dozen', true,'' ),
+(506, '海鮮丼飯', 500.00, 'Dozen', true,'超派超派');
+
 
 -- password 已透過 AES 進行加密
 -- KEY = 0123456789abcdef0123456789abcdef
