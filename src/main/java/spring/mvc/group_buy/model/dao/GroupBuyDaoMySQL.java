@@ -85,7 +85,8 @@ public class GroupBuyDaoMySQL implements GroupBuyDao {
 	// 1. 查詢所有商品(多筆)
 	@Override
 	public List<Product> findAllProducts() {
-		String sql = "select productId, productName, price, unit, isLaunch, productDetail from product";
+		//String sql = "select productId, productName, price, unit, isLaunch, productDetail from product";
+		String sql = "select p.productId, p.productName, p.price, p.unit, p.isLaunch, p.productDetail from product p, v_rank r where p.productId = r.productId order by r.total_quantity desc";
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Product.class));
 	}
 	// 1. 查詢所有商品排行(多筆)

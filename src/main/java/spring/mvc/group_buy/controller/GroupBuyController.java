@@ -33,9 +33,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import spring.mvc.group_buy.model.dao.GroupBuyDao;
+import spring.mvc.group_buy.model.dao.RankDao;
 import spring.mvc.group_buy.model.entity.Cart;
 import spring.mvc.group_buy.model.entity.CartItem;
 import spring.mvc.group_buy.model.entity.Product;
+import spring.mvc.group_buy.model.entity.Rank;
 import spring.mvc.group_buy.model.entity.User;
 import spring.mvc.group_buy.util.KeyUtil;
 
@@ -45,6 +47,9 @@ public class GroupBuyController {
 	
 	@Autowired
 	private GroupBuyDao dao;
+	
+	@Autowired
+	private RankDao rankDao;
 	
 	@Value("${units}")
 	private String[] units;
@@ -197,6 +202,10 @@ public class GroupBuyController {
 		// 過濾出只有上架的商品
 		List<Product> products = dao.findAllProducts();
 		model.addAttribute("products", products);
+		
+		List<Rank> ranks = rankDao.findAllRanks();
+		//model.addAttribute("ranks", ranks);
+		
 		return "group_buy/frontend/main";
 	}
 	
