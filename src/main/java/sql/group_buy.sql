@@ -160,7 +160,8 @@ INSERT INTO product (productId, productName, price, unit, isLaunch) VALUES
 (502, 'Green Tea', 150.00, 'Box', false),
 (503, 'Honey', 200.00, 'Bottle', false),
 (504, 'Sugar', 100.00, 'Bag', true),
-(505, 'Milk', 450.00, 'Dozen', true);
+(505, 'Milk', 450.00, 'Dozen', true),
+(506, '海鮮丼飯', 500.00, 'Dozen', true);
 
 -- password 已透過 AES 進行加密
 -- KEY = 0123456789abcdef0123456789abcdef

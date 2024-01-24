@@ -39,14 +39,14 @@
 <dl class="row">
   <dt class="col-sm-3">商品名稱</dt>
   
-   <dd class="col-sm-9">${ productId }</dd>
+   <dd class="col-sm-9">${ product.productName }</dd>
 
 
 
 
   <dt class="col-sm-3">商品價錢</dt>
   <dd class="col-sm-9">
-    <p>${ product.price }</p>
+    <p>${ product.price } 元</p>
     <p>And some more placeholder definition text.</p>
   </dd>
 
@@ -59,15 +59,13 @@
   <dt class="col-sm-3">Nesting</dt>
   <dd class="col-sm-9">
     <dl class="row">
-      <dt class="col-sm-4">Nested definition list</dt>
+      <dt class="col-sm-4">${ product.productDetail }</dt>
       <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
     </dl>
   </dd>
 </dl>
 
-<p class="">66666 666666  66666666666 666666666666666  6666666666
-44
-44645656666666666666666666666666666666666666666666666666666666666  666666666666666666666fghfghfghfghfghfghfghjfjjthgh
+<p class="">666
 </p> 
 ${ product.price }
 ${ productId }
