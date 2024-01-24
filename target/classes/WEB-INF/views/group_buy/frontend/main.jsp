@@ -27,9 +27,9 @@
     
   </form>
 </div>
-		<div class="w-100 h-50 d-flex justify-content-center">
+		<div class="w-100 h-50 d-flex flex-wrap align-content-start ms-5">
 			<c:forEach items="${ products }" var="product">
-	       		<div class="card mx-2" style="width: 18rem;">
+	       		<div class="card mx-2 m-1" style="width: 18rem;">
 				  <a href="/GroupBuy/mvc/group_buy/frontend/product/detail/${ product.productId }" class="mx-auto">
 				  	<img src="/GroupBuy/images/${ product.productId }.jpg" class="card-img-top mt-1" alt="" style="width:150px;height:150px">
 				  </a>
