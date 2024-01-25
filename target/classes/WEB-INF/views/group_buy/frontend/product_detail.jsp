@@ -54,15 +54,21 @@
   <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
 
   <dt class="col-sm-3 text-truncate">介紹</dt>
-  <dd class="col-sm-3">${ product.productDetail }</dd>
+  <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
 
-  
-    
+  <dt class="col-sm-3">Nesting</dt>
+  <dd class="col-sm-9">
+    <dl class="row">
+      <dt class="col-sm-4">${ product.productDetail }</dt>
+      <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+    </dl>
   </dd>
 </dl>
 
-<p class="">
+<p class="">666
 </p> 
+${ product.price }
+${ productId }
 
 </section>  
 

@@ -156,12 +156,13 @@ insert into level_ref_service(levelId, serviceId, sort) values(2, 51, 3);
 insert into level_ref_service(levelId, serviceId, sort) values(2, 52, 4);
 
 INSERT INTO product (productId, productName, price, unit, isLaunch,productDetail ) VALUES
-(501, 'Coffee', 300.00, '包', true,'即溶咖啡，是由500多種的口味測試中嚴選出酸苦適中口感之咖啡' ),
-(502, 'Green Tea', 150.00, '瓶', false,'口感清新芳香，招待客人好選' ),
-(503, 'Honey', 200.00, '罐', false,'氣味最濃郁且風味獨特，不易結晶，口感溫潤，尾韻較沉' ),
-(504, 'Sugar', 100.00, '包', true,'適宜牛奶、咖啡、紅茶、冰品、蓮子、煮豆湯、白木耳、製餡、作年糕、西點、花茶、果汁等一般家庭用調味糖及食品加工用糖 ' ),
-(505, 'Milk', 450.00, '瓶', true,'經殺菌釜高溫高壓殺菌，不含防腐劑，完整保存乳品原味' ),
-(506, '海鮮丼飯', 500.00, '碗', true,'魚肉好吃，醋飯難吃的海鮮丼飯');
+(501, 'Coffee', 300.00, 'Pack', true,'' ),
+(502, 'Green Tea', 150.00, 'Box', false,'' ),
+(503, 'Honey', 200.00, 'Bottle', false,'' ),
+(504, 'Sugar', 100.00, 'Bag', true,'' ),
+(505, 'Milk', 450.00, 'Dozen', true,'' ),
+(506, '海鮮丼飯', 500.00, 'Dozen', true,'超派超派');
+
 
 -- password 已透過 AES 進行加密
 -- KEY = 0123456789abcdef0123456789abcdef
