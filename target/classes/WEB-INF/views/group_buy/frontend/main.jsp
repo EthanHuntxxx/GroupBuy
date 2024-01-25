@@ -21,7 +21,7 @@
 	<%@include file="../menu.jspf"%>
 	<div class="w-100 h-50 d-flex justify-content-center">
 
-		<form  method="get" class="my-4">
+		<form action="./search" method="get" class="my-4">
 			<label for="search">搜尋商品:</label> <input type="text" id="search"
 				name="search" placeholder="輸入商品名稱">
 			<button type="submit">搜尋</button>
@@ -44,8 +44,6 @@
 				<div class="card-body">
 					<h5 class="card-title">${ product.productName }</h5>
 					<p class="card-text">${ product.price }元</p>
-					<div class="card-text mb-1">已售出數量：${totalQuantities[product.productId]}</div>
-					
 					<form method="post" action="./addToCart" class="pure-form">
 						<div class="d-flex justify-content-center px-1">
 							數量: <input type="number" id="quantity" name="quantity" value="1"
@@ -56,7 +54,6 @@
 						<input type="hidden" id="productId" name="productId"
 							value="${ product.productId}" />
 						<p />
-							
 					</form>
 				</div>
 			</div>
