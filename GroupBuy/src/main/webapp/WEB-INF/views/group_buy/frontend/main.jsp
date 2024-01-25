@@ -17,7 +17,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<!-- menu -->
+	<!-- menu  -->
 	<%@include file="../menu.jspf"%>
 	<div class="w-100 h-50 d-flex justify-content-center">
 
