@@ -21,15 +21,16 @@
 	<%@include file="../menu.jspf"%>
 	<div class="w-100 h-50 d-flex justify-content-center">
 
-		<form  method="get" class="my-4">
-			<label for="search">搜尋商品:</label> <input type="text" id="search"
-				name="search" placeholder="輸入商品名稱">
-			<button type="submit">搜尋</button>
-			<p />
-			<div class="d-grid gap-2 col-6 mx-auto">
-				<button class="btn btn-primary" type="button">銷售排行</button>
-			</div>
+		<form  action="./search" method="get" class="my-4">
+		    <label for="search">搜尋商品:</label> 
+		    <input type="text" id="search" name="search" placeholder="輸入商品名稱">
+		    <button type="submit">搜尋</button>
+		    <p />
+		    <div class="d-grid gap-2 col-6 mx-auto">
+		        <button class="btn btn-primary" type="button">銷售排行</button>
+		    </div>
 		</form>
+
 	</div>
 	<div class="w-100 h-50 d-flex flex-wrap align-content-start ms-5">
 		<c:forEach items="${ products }" var="product">
