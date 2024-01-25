@@ -21,4 +21,11 @@ public class RankDaoMySQL implements RankDao {
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Rank.class));
 	}
 
+	
+	// 新增方法來取得已售出數量
+    @Override
+    public int getTotalQuantityForProduct(int productId) {
+        String sql = "SELECT total_quantity FROM v_rank WHERE productId = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{productId}, Integer.class);
+    }
 }
