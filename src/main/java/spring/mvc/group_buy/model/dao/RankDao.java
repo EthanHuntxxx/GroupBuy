@@ -8,5 +8,6 @@ public interface RankDao {
 
 	List<Rank> findAllRanks();
 	
-	int getTotalQuantityForProduct(int productId);
+	Integer getTotalQuantityForProduct(int productId);
+//	int getTotalQuantityForProduct(int productId);
 }
