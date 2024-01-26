@@ -51,7 +51,7 @@
   </dd>
 
   <dt class="col-sm-3">產地</dt>
-  <dd class="col-sm-9"></dd>
+  <dd class="col-sm-9">已售出數量：${totalQuantities[product.productId]}</dd>
 
   <dt class="col-sm-3 text-truncate">介紹</dt>
   <dd class="col-sm-3">${ product.productDetail }</dd>
