@@ -20,7 +20,7 @@
 		<!-- menu -->
 		<%@include file="../menu.jspf" %>
 		
-		<div style="padding: 15px">
+		<div style="padding: 15px"> 
 			<table>
 				<tr>
 					<td valign="top">

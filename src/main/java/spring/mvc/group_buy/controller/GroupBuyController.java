@@ -240,8 +240,18 @@ public class GroupBuyController {
 		List<Product> products = dao.findAllProducts();
 		List<Product> showproducts = products.stream().filter(product -> product.getProductName().contains(search)).toList();
 
-		model.addAttribute("products", showproducts);
-		return "group_buy/frontend/main";
+		// 在這裡設置已售出數量的相關資料
+	    Map<Integer, Integer> totalQuantities = new HashMap<>();
+
+	    for (Product product : showproducts) {
+	        int productId = product.getProductId();
+	        int totalQuantity = rankDao.getTotalQuantityForProduct(productId);
+	        totalQuantities.put(productId, totalQuantity);
+	    }
+
+	    model.addAttribute("products", showproducts);
+	    model.addAttribute("totalQuantities", totalQuantities);
+	    return "group_buy/frontend/main";
 	}
 	
 	
