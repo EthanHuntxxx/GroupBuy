@@ -244,6 +244,7 @@ public class GroupBuyController {
 		return "group_buy/frontend/main";
 	}
 	
+	
 	// 前台購物完成頁
 	@PostMapping("/frontend/addToCart")
 	public String addToCart(@RequestParam("productId") Integer productId,

@@ -51,7 +51,7 @@
   </dd>
 
   <dt class="col-sm-3">產地</dt>
-  <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+  <dd class="col-sm-9"></dd>
 
   <dt class="col-sm-3 text-truncate">介紹</dt>
   <dd class="col-sm-3">${ product.productDetail }</dd>
