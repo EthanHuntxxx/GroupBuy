@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>產品頁</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -47,17 +47,16 @@
   <dt class="col-sm-3">商品價錢</dt>
   <dd class="col-sm-9">
     <p>${ product.price } 元</p>
-    <p></p>
+    <p>And some more placeholder definition text.</p>
   </dd>
 
-  <dt class="col-sm-3"></dt>
-  <dd class="col-sm-9"></dd>
+  <dt class="col-sm-3">產地</dt>
+  <dd class="col-sm-9">已售出數量：${totalQuantities[product.productId]}</dd>
 
   <dt class="col-sm-3 text-truncate">介紹</dt>
   <dd class="col-sm-3">${ product.productDetail }</dd>
-
   
-    
+  
   </dd>
 </dl>
 

@@ -163,6 +163,7 @@ INSERT INTO product (productId, productName, price, unit, isLaunch,productDetail
 (505, 'Milk', 450.00, '瓶', true,'經殺菌釜高溫高壓殺菌，不含防腐劑，完整保存乳品原味' ),
 (506, '海鮮丼飯', 500.00, '碗', true,'魚肉好吃，醋飯難吃的海鮮丼飯');
 
+
 -- password 已透過 AES 進行加密
 -- KEY = 0123456789abcdef0123456789abcdef
 INSERT INTO user (userId, username, password, level) VALUES

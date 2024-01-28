@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
@@ -203,11 +205,33 @@ public class GroupBuyController {
 		List<Product> products = dao.findAllProducts();
 		model.addAttribute("products", products);
 		
+		 Map<Integer, Integer> totalQuantities = new HashMap<>();
+
+		    for (Product product : products) {
+		        int totalQuantity = rankDao.getTotalQuantityForProduct(product.getProductId());
+		        totalQuantities.put(product.getProductId(), totalQuantity);
+		    }
+
+		    model.addAttribute("totalQuantities", totalQuantities);
+		    
 		List<Rank> ranks = rankDao.findAllRanks();
-		//model.addAttribute("ranks", ranks);
-		
+
 		return "group_buy/frontend/main";
 	}
+	
+	
+//	// 取得已銷售數量
+//	@SuppressWarnings("unused")
+//	private int getTotalQuantityForProduct(List<Rank> ranks, int productId) {
+//	    for (Rank rank : ranks) {
+//	        if (rank.getProductId() == productId) {
+//	            return rank.getTotalQuantity();
+//	        }
+//	    }
+//	    return 0; // 如果找不到相應的商品，返回 0
+//	}
+//	
+	
 	
 	// 商品搜尋
 	@GetMapping("/frontend/search")
@@ -216,9 +240,20 @@ public class GroupBuyController {
 		List<Product> products = dao.findAllProducts();
 		List<Product> showproducts = products.stream().filter(product -> product.getProductName().contains(search)).toList();
 
-		model.addAttribute("products", showproducts);
-		return "group_buy/frontend/main";
+		// 在這裡設置已售出數量的相關資料
+	    Map<Integer, Integer> totalQuantities = new HashMap<>();
+
+	    for (Product product : showproducts) {
+	        int productId = product.getProductId();
+	        int totalQuantity = rankDao.getTotalQuantityForProduct(productId);
+	        totalQuantities.put(productId, totalQuantity);
+	    }
+
+	    model.addAttribute("products", showproducts);
+	    model.addAttribute("totalQuantities", totalQuantities);
+	    return "group_buy/frontend/main";
 	}
+	
 	
 	// 前台購物完成頁
 	@PostMapping("/frontend/addToCart")
