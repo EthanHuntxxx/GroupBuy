@@ -19,7 +19,7 @@ public class Product {
 	private Integer price; // 商品價格 
 	private String unit; // 單位
 	private Boolean isLaunch; // 是否上架 
-	private String productDetail;
+	private String productDetail; // 商品明細
 	
 	public Product() {
 		
