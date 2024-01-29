@@ -49,14 +49,14 @@
 									</td>
 									<td>${ item.product.price * item.quantity }</td>
 									<td>
-										<a href="javascript:void(0);" onClick="updateItem(${ item.itemId })" class="pure-button button-success">Update</a>
+										<a href="javascript:void(0);" onClick="updateItem(${ item.itemId })" class="pure-button button-success">修改</a>
 									</td>	
 									<td>
 										<!--
 										<button onClick="event.preventDefault();deleteItem(${ item.itemId });"
                                                 class="button-error pure-button">刪除</button>
                                         -->         
-										<a href="javascript:void(0);" onClick="deleteItem(${ item.itemId })" class="pure-button button-error">Delete</a>
+										<a href="javascript:void(0);" onClick="deleteItem(${ item.itemId })" class="pure-button button-error">刪除</a>
 										
 									</td>
 								</tr>
