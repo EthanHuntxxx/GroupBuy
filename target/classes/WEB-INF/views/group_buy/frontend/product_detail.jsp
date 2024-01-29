@@ -13,8 +13,9 @@
 	    <style type="text/css">
 	    .content {
     max-width: 600px; /* 設定最大寬度，可以根據需要調整 */
-    word-wrap: break-word; /* 啟用自動換行 */
+    word-wrap: break-word; /* 自動換行 */
     font-weight: bold;
+    
 }
 	    </style>
 </head>
