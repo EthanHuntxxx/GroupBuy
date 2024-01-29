@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>團購網-後台報表</title>
+		<title>團購網-查看訂單</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 		<link rel="stylesheet" href="/GroupBuy/css/group_buy.css">
 	</head>
@@ -20,7 +20,7 @@
 					<td valign="top">
 						<form class="pure-form">
 							<fieldset>
-								<legend>團購網-後台報表</legend>
+								<legend>團購網-查看訂單</legend>
 								<table class="pure-table">
 								    <thead>
 								        <tr>
@@ -34,7 +34,7 @@
 								    <tbody>
 								    	<c:forEach items="${ reports }" var="report" varStatus="status">
 									        <tr class="${ (status.count % 2) == 0 ? 'pure-table-odd' : 'pure-table' }">
-									        	<td>${ status.count + 1 }</td>
+									        	<td>${ status.count }</td>
 									            <td>${ report.userId }</td>
 									            <td>${ report.username }</td>
 									            <td>$${ report.total }</td>
@@ -56,7 +56,7 @@
 								<legend>團購網- ${ reportUser.userId } ${ reportUser.username } 結帳明細</legend>
 								<table class="pure-table pure-table-bordered">
 									<thead>
-										<tr><th>購物車序號</th><th>購物車日期</th><th>購物項目</th></tr>
+										<tr><th>訂單序號</th><th>訂購日期</th><th>購物項目</th></tr>
 									</thead>
 									<tbody>
 										<c:forEach items="${ carts }" var="cart">

@@ -60,12 +60,12 @@
 								<legend>團購網-後臺商品維護</legend>
 								<table class="pure-table pure-table-bordered">
 									<thead>
-										<tr><th>序號</th><th>ID</th><th>品名</th><th>價格</th><th>單位</th><th>上架</th></tr>
+										<tr><th>排行</th><th>ID</th><th>品名</th><th>價格</th><th>單位</th><th>上架</th></tr>
 									</thead>
 									<tbody>
 										<c:forEach items="${ products }" var="product" varStatus="status">
 										<tr>
-											<td>${ status.count+1 }</td>
+											<td>${ status.count }</td>
 											<td>${ product.productId }</td>
 											<td>${ product.productName }</td>
 											<td>${ product.price }</td>

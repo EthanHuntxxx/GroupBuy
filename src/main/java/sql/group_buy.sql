@@ -138,7 +138,7 @@ insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(2, 'frontend', '🛒 購物車', '/mvc/group_buy/frontend/cart');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(3, 'frontend', '🔞 登出', '/mvc/group_buy/logout');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(4, 'frontend', '👼 Profile', '/mvc/group_buy/frontend/profile');
-insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(51, 'backend', '後台報告', '/mvc/group_buy/backend/report');
+insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(51, 'backend', '查看訂單', '/mvc/group_buy/backend/report');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(52, 'backend', '商品新增', '/mvc/group_buy/backend/main');
 
 insert into level(levelId, levelName) values(1, '一般客戶');
