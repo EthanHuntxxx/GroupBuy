@@ -81,5 +81,5 @@ public interface GroupBuyDao {
 	
 	// 13. 計算每個使用者所購買的總金額
 	List<Map<String, Object>> calculateTotalAmountPerUser();
-	
+	// 14. 
 }
