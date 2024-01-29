@@ -10,7 +10,13 @@
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 	  
-	    
+	    <style type="text/css">
+	    .content {
+    max-width: 600px; /* 設定最大寬度，可以根據需要調整 */
+    word-wrap: break-word; /* 啟用自動換行 */
+    font-weight: bold;
+}
+	    </style>
 </head>
 <body>
 <%@include file="../menu.jspf" %>
@@ -59,7 +65,9 @@
   <dd class="col-sm-9"></dd>
 
   <dt class="col-sm-3 text-truncate">介紹</dt>
-  <dd class="col-sm-3">${ product.productDetail }</dd>
+  <div class="content">${ product.productDetail }</div>
+  
+  
   
   
 
