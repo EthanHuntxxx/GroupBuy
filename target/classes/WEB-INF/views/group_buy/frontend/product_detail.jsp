@@ -47,8 +47,13 @@
   <dt class="col-sm-3">商品價錢</dt>
   <dd class="col-sm-9">
     <p>${ product.price } 元</p>
+   <!--   <p>And some more placeholder definition text.</p> -->
+
     <p></p>
   </dd>
+
+  <!-- <dt class="col-sm-3">產地</dt>
+  <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd> -->
 
   <dt class="col-sm-3"></dt>
   <dd class="col-sm-9"></dd>
@@ -57,7 +62,7 @@
   <dd class="col-sm-3">${ product.productDetail }</dd>
   
   
-  </dd>
+
 </dl>
 
 <p class="">

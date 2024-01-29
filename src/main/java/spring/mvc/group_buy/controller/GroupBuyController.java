@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Base64;
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +35,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import spring.mvc.group_buy.model.dao.GroupBuyDao;
 import spring.mvc.group_buy.model.dao.RankDao;
@@ -42,6 +46,7 @@ import spring.mvc.group_buy.model.entity.Product;
 import spring.mvc.group_buy.model.entity.Rank;
 import spring.mvc.group_buy.model.entity.User;
 import spring.mvc.group_buy.util.KeyUtil;
+
 
 @Controller
 @RequestMapping("/group_buy")
@@ -447,6 +452,31 @@ public class GroupBuyController {
 
 	}
 	
+//	//上傳商品圖片
+//	@RestController
+//	@RequestMapping("/file")
+//	public class FileUploadController {
+//
+//	    @PostMapping("/upload")
+//	    public ResponseEntity<String> handleFileUpload(@RequestParam("upfile") MultipartFile file) {
+//	        try {
+//	            // 指定檔案存放的位置
+//	            String uploadDir = "GroupBuy\\src\\main\\webapp\\images";
+//	            String filePath = uploadDir + File.separator + file.getOriginalFilename();
+//
+//	            // 實際上傳檔案
+//	            file.transferTo(new File(filePath));
+//
+//	            // 回傳成功訊息
+//	            return ResponseEntity.ok("檔案上傳成功: " + filePath);
+//	        } catch (IOException e) {
+//	            // 處理上傳失敗的情況
+//	            return ResponseEntity.status(500).body("檔案上傳失敗: " + e.getMessage());
+//	        }
+//	    }
+//	}
+//	
+//	
 	// 商品上下架處理
 	@GetMapping("/backend/update_product_launch")
 	public String updateProductLaunch(@RequestParam("productId") Integer productId, 

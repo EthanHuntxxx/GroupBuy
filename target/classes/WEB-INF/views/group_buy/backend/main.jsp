@@ -29,13 +29,28 @@
 								<legend>團購網-商品新增</legend>
 								品名: <sp:input path="productName" name="productName" value="水果茶" /><p />
 								價格: <sp:input type="number" path="price" value="40" /><p />
-								單位: <sp:select path="unit" items="${ units }" />
+								單位: 
+								<!-- <sp:select path="unit" items="${ units }" /> -->
+								<input list="unitList" name="unit" id="unitInput" class="form-control d-inline-block" style="width: auto;">
+								<datalist id="unitList">
+								    <option value="杯">
+								    <option value="瓶">
+								    <option value="包">
+								    <option value="箱">
+								    <option value="組">
+								</datalist>
 								&nbsp;&nbsp;&nbsp;&nbsp;	 
 								上架: <sp:checkbox path="isLaunch" /> 
 								<p />
-								
+								<label class="btn btn-outline-primary ">上傳圖片:
+								  <input type="file" name="upfile[]" id="upfile" multiple 
+								         class="upfile d-none" accept=".jpg, .jpeg, .png, .gif">
+								</label>
+								<p />
+								<label>
 								商品資訊: <sp:textarea path="productDetail" name="productDetail" style="width: 300px; height:300px;" /><p />
 								<button type="submit" class="pure-button pure-button-primary">新增</button>
+								</label>
 							</fieldset>
 						</sp:form>
 					</td>
