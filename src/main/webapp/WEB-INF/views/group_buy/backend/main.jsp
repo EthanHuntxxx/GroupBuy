@@ -46,10 +46,11 @@
 								  <input type="file" name="upfile[]" id="upfile" multiple 
 								         class="upfile d-none" accept=".jpg, .jpeg, .png, .gif">
 								</label>
-								
+								<p />
+								<label>
 								商品資訊: <sp:textarea path="productDetail" name="productDetail" style="width: 300px; height:300px;" /><p />
 								<button type="submit" class="pure-button pure-button-primary">新增</button>
-								
+								</label>
 							</fieldset>
 						</sp:form>
 					</td>
