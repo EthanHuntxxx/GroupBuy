@@ -62,7 +62,7 @@
   <dd class="col-sm-3">${ product.productDetail }</dd>
   
   
-  </dd>
+
 </dl>
 
 <p class="">
