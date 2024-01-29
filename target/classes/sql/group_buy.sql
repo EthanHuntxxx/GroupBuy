@@ -136,8 +136,8 @@ alter table cartitem auto_increment = 1;
 -- 預設資料
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(1, 'frontend', '團購首頁', '/mvc/group_buy/frontend/main');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(2, 'frontend', '🛒 購物車', '/mvc/group_buy/frontend/cart');
-insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(3, 'frontend', '🔞 登出', '/mvc/group_buy/logout');
-insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(4, 'frontend', '👼 Profile', '/mvc/group_buy/frontend/profile');
+insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(3, 'frontend', '登出', '/mvc/group_buy/logout');
+insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(4, 'frontend', 'Profile', '/mvc/group_buy/frontend/profile');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(51, 'backend', '查看訂單', '/mvc/group_buy/backend/report');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(52, 'backend', '商品新增', '/mvc/group_buy/backend/main');
 
@@ -156,11 +156,11 @@ insert into level_ref_service(levelId, serviceId, sort) values(2, 51, 3);
 insert into level_ref_service(levelId, serviceId, sort) values(2, 52, 4);
 
 INSERT INTO product (productId, productName, price, unit, isLaunch,productDetail ) VALUES
-(501, 'Coffee', 300.00, '瓶', true,'即溶咖啡，是由500多種的口味測試中嚴選出酸苦適中口感之咖啡' ),
-(502, 'Green Tea', 150.00, '瓶', true,'口感清新芳香，招待客人好選' ),
-(503, 'Honey', 200.00, '罐', true,'氣味最濃郁且風味獨特，不易結晶，口感溫潤，尾韻較沉' ),
-(504, 'Sugar', 100.00, '包', true,'適宜牛奶、咖啡、紅茶、冰品、蓮子、煮豆湯、白木耳、製餡、作年糕、西點、花茶、果汁等一般家庭用調味糖及食品加工用糖 ' ),
-(505, 'Milk', 450.00, '瓶', true,'經殺菌釜高溫高壓殺菌，不含防腐劑，完整保存乳品原味' ),
+(501, '咖啡', 300.00, '瓶', true,'即溶咖啡，是由500多種的口味測試中嚴選出酸苦適中口感之咖啡' ),
+(502, '綠茶', 150.00, '瓶', true,'口感清新芳香，招待客人好選' ),
+(503, '蜂蜜', 200.00, '罐', true,'氣味最濃郁且風味獨特，不易結晶，口感溫潤，尾韻較沉' ),
+(504, '糖包', 100.00, '包', true,'適宜牛奶、咖啡、紅茶、冰品、蓮子、煮豆湯、白木耳、製餡、作年糕、西點、花茶、果汁等一般家庭用調味糖及食品加工用糖 ' ),
+(505, '牛奶', 450.00, '瓶', true,'經殺菌釜高溫高壓殺菌，不含防腐劑，完整保存乳品原味' ),
 (506, '海鮮丼飯', 500.00, '碗', true,'魚肉好吃，醋飯難吃的海鮮丼飯'),
 (507, '榴槤', 250.00, '顆', true,'濃郁的香味和獨特的口感'),
 (508, '洋芋片', 50.00, '包', true,'馬鈴薯被切成薄片，然後炸或烤至金黃酥脆'),
