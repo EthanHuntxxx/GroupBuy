@@ -137,7 +137,7 @@ alter table cartitem auto_increment = 1;
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(1, 'frontend', '團購首頁', '/mvc/group_buy/frontend/main');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(2, 'frontend', '🛒 購物車', '/mvc/group_buy/frontend/cart');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(3, 'frontend', '登出', '/mvc/group_buy/logout');
-insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(4, 'frontend', 'Profile', '/mvc/group_buy/frontend/profile');
+insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(4, 'frontend', '會員', '/mvc/group_buy/frontend/profile');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(51, 'backend', '查看訂單', '/mvc/group_buy/backend/report');
 insert into service (serviceId, serviceLocation, serviceName, serviceUrl) values(52, 'backend', '商品新增', '/mvc/group_buy/backend/main');
 
