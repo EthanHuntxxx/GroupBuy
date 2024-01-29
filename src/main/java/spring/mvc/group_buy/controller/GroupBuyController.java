@@ -207,7 +207,7 @@ public class GroupBuyController {
 	@GetMapping("/frontend/main")
 	public String frontendMain(Model model) {
 		// 過濾出只有上架的商品
-		List<Product> products = dao.findAllProducts();
+		List<Product> products = dao.findAllProducts(true);
 		model.addAttribute("products", products);
 		
 		 Map<Integer, Integer> totalQuantities = new HashMap<>();
