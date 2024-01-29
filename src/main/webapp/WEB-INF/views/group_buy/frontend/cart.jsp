@@ -4,12 +4,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		
 		<meta charset="UTF-8">
 		<title>團購網-購物車</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 		<link rel="stylesheet" href="/GroupBuy/css/group_buy.css">
-		
+		 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+		 
 		<script type="text/javascript">
+		
 			function updateItem(itemId) {
 				var quantity = document.getElementById('item_' + itemId + '_quantity').value;
 				window.location.href='./cart/update?itemId=' + itemId + '&quantity=' + quantity;
@@ -23,6 +26,8 @@
 		
 	</head>
 	<body>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+	
 		<!-- menu -->
 		<%@include file="../menu.jspf" %>
 		
@@ -69,8 +74,26 @@
 						</tbody>
 					</table>
 					<p />
-					<a href="javascript:void(0);" ${ cart.cartItems == '[]' ? 'disabled' : '' } class="pure-button pure-button-primary" onclick="location.href='./checkout';">結帳</a>	 
-				</fieldset>
+					<a href="javascript:void(0);" ${ cart.cartItems == '[]' ? 'disabled' : '' } class="pure-button pure-button-primary" onclick="showCheckoutConfirmation();">結帳</a>
+					<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+					<script>
+					    function showCheckoutConfirmation() {
+					        Swal.fire({
+					            title: '確認結帳',
+					            text: '您確定要進行結帳嗎？',
+					            icon: 'question',
+					            showCancelButton: true,
+					            confirmButtonText: '確定',
+					            cancelButtonText: '取消'
+					        }).then((result) => {
+					            if (result.isConfirmed) {
+					                // 使用者按下確定，執行結帳相關的操作
+					                location.href = './checkout';
+					            }
+					        });
+					    }
+					</script>				
+						</fieldset>
 			</form>
 		</div>
 		

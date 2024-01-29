@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import javax.crypto.spec.SecretKeySpec;
 import javax.imageio.ImageIO;
@@ -206,21 +207,29 @@ public class GroupBuyController {
 	// 前台團購首頁
 	@GetMapping("/frontend/main")
 	public String frontendMain(Model model) {
+		
+		// 找到排名
+		List<Rank> ranks = rankDao.findAllRanks();
+		
 		// 過濾出只有上架的商品
 		List<Product> products = dao.findAllProducts(true);
+		products = products.stream().sorted((Product p1, Product p2)-> {
+			Rank r1 = ranks.stream().filter(rank-> rank.getProductId().equals(p1.getProductId())).findFirst().get();
+			Rank r2 = ranks.stream().filter(rank-> rank.getProductId().equals(p2.getProductId())).findFirst().get();
+			return -(r1.getTotalQuantity() - r2.getTotalQuantity());
+		}).collect(Collectors.toList());
+		
 		model.addAttribute("products", products);
 		
-		 Map<Integer, Integer> totalQuantities = new HashMap<>();
+		Map<Integer, Integer> totalQuantities = new HashMap<>();
 
-		    for (Product product : products) {
-		        int totalQuantity = rankDao.getTotalQuantityForProduct(product.getProductId());
-		        totalQuantities.put(product.getProductId(), totalQuantity);
-		    }
+	    for (Product product : products) {
+	        int totalQuantity = rankDao.getTotalQuantityForProduct(product.getProductId());
+	        totalQuantities.put(product.getProductId(), totalQuantity);
+	    }
 
-		    model.addAttribute("totalQuantities", totalQuantities);
+		model.addAttribute("totalQuantities", totalQuantities);
 		    
-		List<Rank> ranks = rankDao.findAllRanks();
-
 		return "group_buy/frontend/main";
 	}
 	
