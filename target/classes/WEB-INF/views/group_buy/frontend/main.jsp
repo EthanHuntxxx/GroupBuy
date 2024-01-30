@@ -48,7 +48,7 @@
 					<div class="card-text mb-1">已售出數量：${totalQuantities[product.productId]}</div>
 					
 					<form method="post" action="./addToCart" class="pure-form">
-						<div class="d-flex justify-content-center px-1">
+						<div class="d-flex justify-content-center align-items-center px-1">
 							數量: <input type="number" id="quantity" name="quantity" value="1"
 								style="width: 90px;" /> ${ product.unit }
 							<button type="submit" ${ (empty products)?'disabled':'' }

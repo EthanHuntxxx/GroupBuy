@@ -65,8 +65,8 @@
   <dt class="col-sm-3"></dt>
   <dd class="col-sm-9"></dd>
 
-  <dt class="col-sm-3 text-truncate">介紹</dt>
-  <div class="content">${ product.productDetail }</div>
+  <dt class="col-sm-3">介紹</dt>
+  <dd class="col-sm-9">${ product.productDetail }</dd>
   
   
   
